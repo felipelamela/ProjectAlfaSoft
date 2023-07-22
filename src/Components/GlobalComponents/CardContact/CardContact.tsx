@@ -1,6 +1,14 @@
 import React from 'react'
 
-const CardContact = () => {
+interface CardContactProps {
+  id: number,
+  Name: string,
+  Contato: number
+  Email: string
+}
+
+
+const CardContact: React.FC<CardContactProps> = ({ id, Name, Contato, Email }) => {
 
   function handleDelete() {
 
@@ -9,10 +17,10 @@ const CardContact = () => {
   return (
     <>
       <div className="contanier">
-        <p className="element" id="first-element">Id</p>
-        <p className="nome">Nome </p>
-        <p className="contato">41991122149 </p>
-        <p className="email">dev.fefl@gmail.com</p>
+        <p className="element" id="first-element">{id}</p>
+        <p className="nome">{Name}</p>
+        <p className="contato">{Contato}</p>
+        <p className="email">{Email}</p>
         <div className='containerImg'>
           <img src="/img/edicao.svg" alt="" />
           <img onClick={handleDelete} src="/img/delete.svg" alt="" />

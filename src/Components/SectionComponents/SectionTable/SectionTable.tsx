@@ -1,7 +1,18 @@
+"use client"
+
 import CardContact from "../../GlobalComponents/CardContact/CardContact"
+import useFetch from "../../../Utilits/useFetch";
+
 
 
 const SectionTableContact = () => {
+
+  const { data, error, isLoading } = useFetch("/data/contact.json");
+
+  console.log(data)
+
+
+  if (data === null) return <p>Loading..</p>
 
   return (
     <>
@@ -18,12 +29,17 @@ const SectionTableContact = () => {
             <span className="edicao">Edição</span>
           </div>
 
-          <CardContact />
-          <CardContact />
-          <CardContact />
-          <CardContact />
-          <CardContact />
-          <CardContact />
+          {data.map((item, index) => (
+            <CardContact
+              key={index}
+              id={item.id}
+              Name={item.Name}
+              Contato={item.Contato}
+              Email={item.Email}
+            />
+
+          ))}
+
 
         </div>
 

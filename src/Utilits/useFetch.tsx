@@ -1,12 +1,15 @@
 import React from "react";
-interface ApiResponse<T> {
-  data: T | null;
-  error: Error | null;
-  isLoading: boolean;
+
+interface dataProps {
+  id: number,
+  Name: string,
+  Contato: number
+  Email: string
+  Img: string
 }
 
-function useFetch<T>(url: string): ApiResponse<T> {
-  const [data, setData] = React.useState<T | null>(null);
+function useFetch(url: string) {
+  const [data, setData] = React.useState<dataProps[] | null>(null);
   const [error, setError] = React.useState<Error | null>(null);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
@@ -18,7 +21,7 @@ function useFetch<T>(url: string): ApiResponse<T> {
           throw new Error('Erro ao obter os dados da API');
         }
 
-        const jsonData: T = await response.json();
+        const jsonData: dataProps[] = await response.json();
         setData(jsonData);
         setIsLoading(false);
       } catch (error) {
