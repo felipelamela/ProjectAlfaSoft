@@ -1,3 +1,15 @@
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>
+  return (
+    <>
+
+      <style jsx>{`
+
+      
+      `}</style>
+
+    </>
+
+
+
+  )
 }
