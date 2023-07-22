@@ -2,10 +2,10 @@ import React from "react";
 
 interface dataProps {
   id: number,
-  Name: string,
-  Contato: number
-  Email: string
-  Img: string
+  nome: string,
+  contato: number
+  email: string
+  img: string
 }
 
 function useFetch(url: string) {

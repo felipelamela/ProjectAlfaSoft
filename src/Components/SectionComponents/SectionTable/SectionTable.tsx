@@ -34,8 +34,8 @@ const SectionTableContact = () => {
               key={index}
               id={item.id}
               nome={item.nome}
-              contato={item.Contato}
-              email={item.Email}
+              contato={item.contato}
+              email={item.email}
             />
 
           ))}

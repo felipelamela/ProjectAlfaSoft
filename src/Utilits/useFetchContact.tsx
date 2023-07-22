@@ -2,10 +2,10 @@ import React from "react";
 
 interface dataProps {
   id: number,
-  Name: string,
-  Contato: number
-  Email: string
-  Img: string
+  nome: string,
+  contato: number
+  email: string
+  img: string
 }
 
 function useFetchContact(id: string | string[]) {
@@ -16,7 +16,7 @@ function useFetchContact(id: string | string[]) {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`/data/contact.json`);
+        const response = await fetch(`http://localhost:3001/api/usercontact`);
         if (!response.ok) {
           throw new Error('Erro ao obter os dados da API');
         }
@@ -32,7 +32,7 @@ function useFetchContact(id: string | string[]) {
     }
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return { data, error, isLoading };
 }
