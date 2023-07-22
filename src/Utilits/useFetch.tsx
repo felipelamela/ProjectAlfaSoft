@@ -27,7 +27,6 @@ function useFetch<T>(url: string): ApiResponse<T> {
       }
     }
 
-    // Iniciando a requisição quando o componente monta
     fetchData();
   }, [url]);
 

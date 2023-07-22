@@ -2,7 +2,7 @@
 const GlobalTheme = () => {
   return (
     <>
-    <style jsx>{`
+      <style global jsx>{`
     /* Reset CSS */
     body, div, span, h1, h2, h3, h4, img, 
     ul, li,p, section, article, header, 
@@ -21,7 +21,7 @@ const GlobalTheme = () => {
     
     
     `}</style>
-    
+
     </>
   )
 }
