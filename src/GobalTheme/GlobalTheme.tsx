@@ -5,7 +5,7 @@ const GlobalTheme = () => {
       <style global jsx>{`
     /* Reset CSS */
     body, div, span, h1, h2, h3, h4, img, 
-    ul, li,p, section, article, header, 
+    ul, li, p, section, article, header, 
     footer, nav, main{
         margin: 0;
         padding: 0;

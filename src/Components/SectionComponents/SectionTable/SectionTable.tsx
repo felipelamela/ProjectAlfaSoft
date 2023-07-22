@@ -1,3 +1,4 @@
+import CardContact from "../../GlobalComponents/CardContact/CardContact"
 
 
 const SectionTableContact = () => {
@@ -10,12 +11,19 @@ const SectionTableContact = () => {
 
           </div>
           <div className="contanier">
-            <span className="element" id="first-element">Id</span>
+            <span className="element">Id</span>
             <span className="nome">Nome</span>
             <span className="contato">Contato</span>
             <span className="email">E-mail</span>
             <span className="edicao">Edição</span>
           </div>
+
+          <CardContact />
+          <CardContact />
+          <CardContact />
+          <CardContact />
+          <CardContact />
+          <CardContact />
 
         </div>
 
@@ -28,7 +36,7 @@ const SectionTableContact = () => {
       .containerEdicao{
         max-width:700px;
         width:100%;
-        margin: auto;
+        margin: 3rem auto;
         box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
       }           
       .contanier {
@@ -45,20 +53,26 @@ const SectionTableContact = () => {
       .edicao {
         padding: 10px;
         color:white;
-        text-align: center;
+        text-align: start;
       }
-      .nome,.email{
+
+      .nome{
+        width:100%;
+        max-width:100px
+      }
+      .email{
         width:100%;
         max-width:150px
       }
       .contato{
-        width:60px
-        }
+        width:100%;
+        max-width:100px
+      }
       .edicao{
         max-width:80px;
         width:100%
       }
-      #first-element {
+      .element{
         width: 30px;
       }           
       `}</style>
