@@ -1,5 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router';
+import useFetch from '../../../Utilits/useFetch';
+import Link from 'next/link';
 
 interface CardContactProps {
   id: number,
@@ -11,30 +13,57 @@ interface CardContactProps {
 
 const CardContact: React.FC<CardContactProps> = ({ id, nome, contato, email }) => {
   const router = useRouter();
+
   function handleDelete() {
+    fetch("/api/usercontact", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao excluir usuário.");
+        }
+        return response.json();
+      })
+      .then((data) => {
 
+        console.log(data.message);
+      })
+      .catch((error) => {
+        console.error("Erro:", error.message);
+      });
+    router.push('/')
   }
 
-  function handleDetail() {
-    router.push(`/contact/${id}`)
+  function handleDetail(id) {
+    router.push({
+      pathname: "/contact",
+      query: { id },
+    })
   }
-  function handleEdit() {
-    router.push(`/editcontact/${id}`)
+  function handleEdit(id) {
+    router.push({
+      pathname: "/editcontact",
+      query: { id },
+    })
   }
 
   return (
     <>
       <div className="contanier">
-        <p className="element" id="first-element">{id}</p>
+        <p className="element" id="first-element" > {id}</p >
         <p className="nome">{nome}</p>
         <p className="contato">{contato}</p>
         <p className="email">{email}</p>
         <div className='containerImg'>
-          <img onClick={handleEdit} src="/img/edicao.svg" alt="" />
+          <img onClick={e => handleEdit(id)} src="/img/edicao.svg" alt="" />
           <img onClick={handleDelete} src="/img/delete.svg" alt="" />
-          <img onClick={handleDetail} src="/img/more.svg" alt="" />
+          <img onClick={e => handleDetail(id)} src="/img/more.svg" alt="" />
         </div>
-      </div>
+      </div >
       <style jsx>{`
      .contanier {
       display: flex;

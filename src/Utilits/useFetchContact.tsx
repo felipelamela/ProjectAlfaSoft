@@ -16,7 +16,7 @@ function useFetchContact(id: string | string[]) {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:3001/api/usercontact`);
+        const response = await fetch(`http://localhost:3000/api/usercontact`);
         if (!response.ok) {
           throw new Error('Erro ao obter os dados da API');
         }

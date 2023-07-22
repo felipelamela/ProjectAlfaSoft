@@ -3,12 +3,10 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import useFetchContact from '../../src/Utilits/useFetchContact'
 
-const ContatcId: NextPage = () => {
+const Contatc: NextPage = () => {
   const router = useRouter();
   const { id } = router.query
   const { data } = useFetchContact(id)
-  console.log(id)
-  console.log(data)
 
   if (data === null) return <p>loading</p>
   return (
@@ -28,4 +26,4 @@ const ContatcId: NextPage = () => {
   )
 }
 
-export default ContatcId
+export default Contatc

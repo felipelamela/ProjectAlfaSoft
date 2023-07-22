@@ -7,7 +7,7 @@ import useFetch from "../../../Utilits/useFetch";
 
 const SectionTableContact = () => {
 
-  const { data, error, isLoading } = useFetch("http://localhost:3001/api/usercontact");
+  const { data, error, isLoading } = useFetch("http://localhost:3000/api/usercontact");
 
   console.log(data)
 
@@ -39,12 +39,7 @@ const SectionTableContact = () => {
             />
 
           ))}
-
-
         </div>
-
-
-
       </section>
 
       <style jsx>{`

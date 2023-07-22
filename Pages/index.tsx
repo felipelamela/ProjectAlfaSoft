@@ -1,3 +1,4 @@
+import React from "react";
 import SectionEdicaoCar from "../src/Components/SectionComponents/SectionTable/SectionTable";
 
 export default function Page() {
