@@ -7,7 +7,7 @@ import useFetch from "../../../Utilits/useFetch";
 
 const SectionTableContact = () => {
 
-  const { data, error, isLoading } = useFetch("/data/contact.json");
+  const { data, error, isLoading } = useFetch("http://localhost:3001/api/usercontact");
 
   console.log(data)
 
@@ -33,9 +33,9 @@ const SectionTableContact = () => {
             <CardContact
               key={index}
               id={item.id}
-              Name={item.Name}
-              Contato={item.Contato}
-              Email={item.Email}
+              nome={item.nome}
+              contato={item.Contato}
+              email={item.Email}
             />
 
           ))}
