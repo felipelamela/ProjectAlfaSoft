@@ -65,6 +65,7 @@ const CardContact: React.FC<CardContactProps> = ({ id, nome, contato, email }) =
         </div>
       </div >
       <style jsx>{`
+
      .contanier {
       display: flex;
       justify-content: space-between;
@@ -78,7 +79,7 @@ const CardContact: React.FC<CardContactProps> = ({ id, nome, contato, email }) =
         padding:1rem 10px;
         max-width: 300px;
 
-        color:black;
+        color:white;
         text-align: start;
       }
       .nome,.email{
@@ -107,7 +108,9 @@ const CardContact: React.FC<CardContactProps> = ({ id, nome, contato, email }) =
         cursor:pointer;
 
       }
-    
+      p{
+        color:white;
+      }
       .containerImg{
         align-self: center;
       }

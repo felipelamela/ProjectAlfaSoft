@@ -10,7 +10,7 @@ const Contatc: NextPage = () => {
 
   if (data === null) return <p>loading</p>
   return (
-    <>
+    <main>
       {data.map((item, index) => (
         <div key={index}>
           <p>{item.nome}</p>
@@ -21,7 +21,7 @@ const Contatc: NextPage = () => {
         </div>
       ))}
 
-    </>
+    </main>
 
   )
 }

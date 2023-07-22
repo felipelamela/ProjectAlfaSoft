@@ -45,9 +45,12 @@ const SectionTableContact = () => {
       <style jsx>{`
 
       .containerEdicao{
+        position:absolute;
         max-width:700px;
         width:100%;
-        margin: 3rem auto;
+        margin: 0rem auto;
+        top:20%;
+        right:30%;
         box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
       }           
       .contanier {
